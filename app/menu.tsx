@@ -1,13 +1,21 @@
 "use client";
+import { Button } from "@heroui/react/button";
 import { Popover } from "@heroui/react/popover";
+import { Tooltip } from "@heroui/react/tooltip";
 
 export default function Menu() {
   return (
     <Popover>
       <Popover.Trigger aria-label="Download options">
-          <button>
+        <Tooltip delay={0}>
+          <Button variant="ghost" isIconOnly>
             Trigger
-          </button>  
+          </Button>
+          <Tooltip.Content showArrow>
+            <Tooltip.Arrow />
+            <p>Download</p>
+          </Tooltip.Content>
+        </Tooltip>
       </Popover.Trigger>
       <Popover.Content>
         <Popover.Dialog>
